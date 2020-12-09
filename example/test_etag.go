@@ -4,7 +4,7 @@ import (
 	"log"
 	"strings"
 
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
+	ufsdk "github.com/morya/ufile-gosdk"
 )
 
 const (

@@ -3,10 +3,11 @@ package main
 import (
 	"errors"
 	"flag"
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
-	"github.com/ufilesdk-dev/ufile-gosdk/example/helper"
 	"log"
 	"os"
+
+	ufsdk "github.com/morya/ufile-gosdk"
+	"github.com/morya/ufile-gosdk/example/helper"
 )
 
 var (

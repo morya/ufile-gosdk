@@ -1,14 +1,15 @@
 package main
 
 import (
-	"net/http"
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
 	"log"
+	"net/http"
+
+	ufsdk "github.com/morya/ufile-gosdk"
 )
 
 const (
-	uploadFile    = "./FakeBigFile.txt"
-	configFile    = "config.json"
+	uploadFile      = "./FakeBigFile.txt"
+	configFile      = "config.json"
 	remoteStFileKey = "test_standard1.txt"
 	remoteIaFileKey = "test_ia2.txt"
 	remoteArFileKey = "test_archive3.txt"

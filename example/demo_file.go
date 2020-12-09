@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
-	"github.com/ufilesdk-dev/ufile-gosdk/example/helper"
+	ufsdk "github.com/morya/ufile-gosdk"
+	"github.com/morya/ufile-gosdk/example/helper"
 )
 
 const (
@@ -70,19 +70,19 @@ func scheduleUploadhelper(filePath, keyName string, uploadType int, req *ufsdk.U
 	case postUpload:
 		log.Println("正在使用 POST 接口上传文件...")
 		err = req.PostFile(filePath, keyName, "")
-		break;
+		break
 	case mput:
 		log.Println("正在使用同步分片上传接口上传文件...")
 		err = req.MPut(filePath, keyName, "")
-                break;
+		break
 	case mput_withPolicy:
 		log.Println("正在使用Mput+policy接口上传文件...")
 		err = req.MPutWithPolicy(filePath, keyName, "", "{\"callbackUrl\" : \"http://inner.umedia.ucloud.com.cn/CreateUmediaTask\",\"callbackBody\" : \"url=http://demo.ufile.ucloud.cn/test.mp4& patten_name=mypolicy\"}")
-                break;
+		break
 	case asyncmput:
 		log.Println("正在使用异步分片上传接口上传文件...")
 		err = req.AsyncMPut(filePath, keyName, "")
-                break;
+		break
 	case asyncmput_withPolicy:
 		log.Println("正在使用异步分片+policy上传接口上传文件...")
 		err = req.AsyncMPutWithPolicy(filePath, keyName, "", "{\"callbackUrl\" : \"http://inner.umedia.ucloud.com.cn/CreateUmediaTask\",\"callbackBody\" : \"url=http://demo.ufile.ucloud.cn/test.mp4& patten_name=mypolicy\"}")
@@ -96,7 +96,7 @@ func scheduleUploadhelper(filePath, keyName string, uploadType int, req *ufsdk.U
 	}
 	log.Println("文件上传成功!!")
 	log.Println("公有空间文件下载 URL 是：", req.GetPublicURL(keyName))
-	log.Println("私有空间文件下载 URL 是：", req.GetPrivateURL(keyName, 24*60*60 * time.Second)) //过期时间为一天
+	log.Println("私有空间文件下载 URL 是：", req.GetPrivateURL(keyName, 24*60*60*time.Second)) //过期时间为一天
 
 	log.Println("正在获取文件的基本信息。")
 	err = req.HeadFile(keyName)

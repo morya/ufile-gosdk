@@ -1,8 +1,9 @@
 package main
 
 import (
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
 	"log"
+
+	ufsdk "github.com/morya/ufile-gosdk"
 )
 
 const (

@@ -26,6 +26,7 @@ type Config struct {
 	BucketName      string `json:"bucket_name"`
 	FileHost        string `json:"file_host"`
 	BucketHost      string `json:"bucket_host"`
+	Scheme          string `json:"scheme"` // http/https
 	VerifyUploadMD5 bool   `json:"verfiy_upload_md5"`
 }
 

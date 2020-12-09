@@ -2,10 +2,11 @@
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
-	"fmt"
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
+
+	ufsdk "github.com/morya/ufile-gosdk"
 )
 
 var (
@@ -31,12 +32,12 @@ func main() {
 	}
 	log.Println("正在下载文件。。。。")
 
-	defer func(){
-		if(false){
-			fmt.Println("last status: ", req.LastResponseStatus);
-			fmt.Println("last header: ", req.LastResponseHeader);
-			fmt.Println("last body: ", req.LastResponseBody);
-			fmt.Println(string(req.DumpResponse(true)));
+	defer func() {
+		if false {
+			fmt.Println("last status: ", req.LastResponseStatus)
+			fmt.Println("last header: ", req.LastResponseHeader)
+			fmt.Println("last body: ", req.LastResponseBody)
+			fmt.Println(string(req.DumpResponse(true)))
 		}
 	}()
 
@@ -50,7 +51,6 @@ func main() {
 		log.Println("fail:", err.Error())
 		return
 	}
-
 
 	log.Println("success")
 }

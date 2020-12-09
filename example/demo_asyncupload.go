@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	ufsdk "github.com/ufilesdk-dev/ufile-gosdk"
+	ufsdk "github.com/morya/ufile-gosdk"
 )
 
 var (
